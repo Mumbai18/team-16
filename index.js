@@ -1,7 +1,7 @@
 var express=require('express');
 var app=express();
 var bcrypt = require('bcrypt');
-var cors = require()
+var cors = require('cors');
 
 var mysql = require("mysql");
 var con = mysql.createConnection({
