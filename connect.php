@@ -1,11 +1,8 @@
 <?php
-//actually produce a connection to the database
-$connection = mysqli_connect('localhost', 'root');
-if (!$connection){
-    die("Database Connection Failed" . mysqli_error($connection));
+
+$conn=mysqli_connect('localhost','root','root');
+if(!$conn){
+	die("Database Connection Failed!". mysqli_error($connection));
 }
-$select_db = mysqli_select_db($connection, 'cfg');
-if (!$select_db){
-    die("Database Selection Failed" . mysqli_error($connection));
-}
+$db=mysqli_select_db($conn,'educon');
 ?>
