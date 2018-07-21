@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+<br><br><br><br>
+<div class="row">
+	<div class="col-xs-4"><span></span></div>
+	<div class="col-xs-4">
+		<h1>Sign-up</h1>
+	</div>
+</div>
+<div class="row">
+	
+
+<div class="col-xs-4">
+	<span></span>
+</div>
+<div class="col-xs-4">
+<form method="POST" >
+
+    <div class="form-group">
+      
+      <input type="email" class="form-control"  placeholder="Email Address" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required >
+    </div>
+
+
+    <div class="form-group">
+      
+      <input type="password" class="form-control"  placeholder="Password" name="password" required pattern="^[a-zA-Z]\w{3,14}$" >
+    </div>
+
+    <div class="form-group">
+      <div class="container">
+        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+        
+     </div> 
+   </div>
+  </form>
+ 
+ <div class="container-fluid">
+  <p>Already have an account? <a href="login.html">Log In</a></p>
+</div>
+
+</div>
+</div>
+
+	<br>
+
+
+
+</body>
+</html>
