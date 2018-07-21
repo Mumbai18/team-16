@@ -1,0 +1,24 @@
+{
+  "name": "team-16",
+  "version": "1.0.0",
+  "description": "EduCon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mumbai18/team-16.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mumbai18/team-16/issues"
+  },
+  "homepage": "https://github.com/Mumbai18/team-16#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0"
+  }
+}
