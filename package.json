@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/Mumbai18/team-16#readme",
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mysql": "^2.15.0"
+    "mysql": "^2.16.0"
   }
 }
