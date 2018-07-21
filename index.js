@@ -1,14 +1,14 @@
 var express=require('express');
 var app=express();
 var bcrypt = require('bcrypt');
-
+var cors = require()
 
 var mysql = require("mysql");
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "educon"
+  database: "EduCon"
 });
 con.connect(function(err){
   if(err){
@@ -31,11 +31,12 @@ app.use(function(req, res, next) {
 app.get("/", function (req, res) {
     console.log("landing");
 });
-app.get('/APIEP_Signup_Username', function(req, res){
-  var username = req.body.name;
+app.post('/APIEP_Signup_Username', function(req, res){
+  var username = req.body.email;
   var password = req.body.password;
   
   var role=req.body.role;
+
   if (!username.trim() || !password.trim()) {
     res.status(500).send({ error:"One or more fields is empty!"});
   } else {
@@ -104,6 +105,99 @@ app.get('/APIEP_Signup_Username', function(req, res){
 
   }
 });
+
+
+app.post('/APIEP_Login_Username', function(req, res){
+var user= req.body.email;
+var password=req.body.password;
+var role=req.body.role;
+if(role=="Students"){
+  con.query('SELECT * FROM students WHERE Username = ? and Password = ?',[user,password], function (error, results, fields) {
+  if (error) {
+    // console.log("error ocurred",error);
+    res.send({
+      "code":400,
+      "failed":"error ocurred"
+    })
+  }else{
+    if(results.length ==1){
+          
+       res.send({
+          "code":200,
+          "success":"login sucessfull"
+            });
+      
+    }
+    else{
+      res.send({
+        "code":204,
+        "success":"User does not exits"
+          });
+    }
+  }
+});
+}
+else if(role=="Donors"){
+	con.query('SELECT * FROM donors WHERE Username = ? and Password = ?',[user,password], function (error, results, fields) {
+  if (error) {
+    // console.log("error ocurred",error);
+    res.send({
+      "code":400,
+      "failed":"error ocurred"
+    })
+  }else{
+    if(results.length ==1){
+         
+       res.send({
+          "code":200,
+          "success":"login sucessfull"
+            });
+      
+    }
+    else{
+      res.send({
+        "code":204,
+        "success":"User does not exits"
+          });
+    }
+  }
+});
+	}
+else if(role=="Volunteer"){
+	con.query('SELECT * FROM volunteer WHERE Username = ? and Password = ?',[user,password], function (error, results, fields) {
+  if (error) {
+    // console.log("error ocurred",error);
+    res.send({
+      "code":400,
+      "failed":"error ocurred"
+    })
+  }else{
+    if(results.length ==1){
+         
+       res.send({
+          "code":200,
+          "success":"login sucessfull"
+            });
+      
+    }
+    else{
+      res.send({
+        "code":204,
+        "success":"User does not exits"
+          });
+    }
+  }
+});
+	}
+
+
+
+  });
+
+
+
+
+
 app.listen(8080, function () {
     console.log("listening on port 8080");
 });
