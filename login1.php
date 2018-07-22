@@ -133,6 +133,12 @@ else
       
       <input type="password" class="form-control"  placeholder="Password" name="password" required pattern="^[a-zA-Z]\w{3,14}$" >
     </div>
+    <select name="role" class="input pass">
+  <option value="Admin">Admin</option>
+  <option value="Donor">Donor</option>
+  <option value="Volunteer">Volunteer</option>
+  <option value="Student">student</option>
+</select>
 
     <div class="form-group">
       <div class="container">
@@ -143,7 +149,7 @@ else
   </form>
  
  <div class="container-fluid">
-  <p style ="color : white">Do not have an account? <a href="register.php" style="font-size: 20px;">Sign-up</a></p>
+  <p style ="color : white">Do not have an account? <a href="register.html">Sign-up</a></p>
 </div>
 
 </div>

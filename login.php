@@ -6,11 +6,11 @@ if(!empty($_POST)){
  $password=md5($_POST['password']);
  $role=$_POST['role'];
  if($role=="Student"){
-$query="SELECT * FROM `students` WHERE Username like '$username' &&  Password LIKE '$password'";
+$query="SELECT * FROM `student` WHERE email like '$username' &&  password LIKE '$password'";
 $res=mysqli_query($conn,$query);
 $count=mysqli_num_rows($res);
 $first = mysqli_fetch_array($res);
-$query="SELECT * FROM `students` WHERE Username like '$username'";
+$query="SELECT * FROM `student` WHERE email like '$username'";
 $r=mysqli_query($conn,$query);
 $f=mysqli_fetch_array($r);
  
@@ -23,11 +23,11 @@ else
   echo "WRONG CREDENTIALS!";
 }
 else if($role=="Donor"){
-$query="SELECT * FROM `donors` WHERE Username like '$username' &&  Password LIKE '$password'";
+$query="SELECT * FROM `donor` WHERE email like '$username' &&  password LIKE '$password'";
 $res=mysqli_query($conn,$query);
 $count=mysqli_num_rows($res);
 $first = mysqli_fetch_array($res);
-$query="SELECT * FROM `donors` WHERE Username like '$username'";
+$query="SELECT * FROM `donor` WHERE email like '$username'";
 $r=mysqli_query($conn,$query);
 $f=mysqli_fetch_array($r);
  
@@ -40,11 +40,11 @@ else
   echo "WRONG CREDENTIALS!";
 }
 else if($role=="Volunteer"){
-$query="SELECT * FROM `volunteers` WHERE Username like '$username' &&  Password LIKE '$password'";
+$query="SELECT * FROM `volunteers` WHERE email like '$username' &&  password LIKE '$password'";
 $res=mysqli_query($conn,$query);
 $count=mysqli_num_rows($res);
 $first = mysqli_fetch_array($res);
-$query="SELECT * FROM `volunteers` WHERE Username like '$username'";
+$query="SELECT * FROM `volunteers` WHERE email like '$username'";
 $r=mysqli_query($conn,$query);
 $f=mysqli_fetch_array($r);
  
@@ -57,11 +57,11 @@ else
   echo "WRONG CREDENTIALS!";
 }
 else if($role=="Admin"){
-$query="SELECT * FROM `admin` WHERE Username like '$username' &&  Password LIKE '$password'";
+$query="SELECT * FROM `admin` WHERE email like '$username' &&  password LIKE '$password'";
 $res=mysqli_query($conn,$query);
 $count=mysqli_num_rows($res);
 $first = mysqli_fetch_array($res);
-$query="SELECT * FROM `admin` WHERE Username like '$username'";
+$query="SELECT * FROM `admin` WHERE email like '$username'";
 $r=mysqli_query($conn,$query);
 $f=mysqli_fetch_array($r);
  
